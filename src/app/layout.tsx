@@ -1,18 +1,23 @@
 import type { Metadata } from "next";
-import { DM_Sans, Newsreader } from "next/font/google";
+import localFont from "next/font/local";
 import { ConsultationProvider } from "@/components/ConsultationModal";
 import "./globals.css";
 
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+const dmSans = localFont({
+  src: [
+    { path: "./fonts/dm-sans-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/dm-sans-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/dm-sans-latin-600-normal.woff2", weight: "600", style: "normal" },
+  ],
   variable: "--font-sans",
   display: "swap",
 });
 
-const newsreader = Newsreader({
-  subsets: ["latin"],
-  weight: ["400", "500"],
+const newsreader = localFont({
+  src: [
+    { path: "./fonts/newsreader-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/newsreader-latin-500-normal.woff2", weight: "500", style: "normal" },
+  ],
   variable: "--font-serif",
   display: "swap",
 });

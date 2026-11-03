@@ -6,6 +6,7 @@ frontend:
         - nvm install 22
         - nvm use 22
         - npm install -g pnpm@10
+        - pnpm config set store-dir "$(pwd)/.pnpm-store"
         - pnpm install --frozen-lockfile
     build:
       commands:
@@ -16,5 +17,5 @@ frontend:
       - "**/*"
   cache:
     paths:
-      - node_modules/**/*
+      - .pnpm-store/**/*
       - .next/cache/**/*
